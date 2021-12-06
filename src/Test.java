@@ -1,5 +1,6 @@
 
 import Controller.dao.DBConnector;
+import Controller.dao.SanPhamDAO;
 import Model.model.SanPham;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
@@ -17,13 +18,11 @@ import java.sql.ResultSet;
  */
 public class Test {
     public static void main(String[] args) throws Exception {
-        DBConnector dBConnector = DBConnector.getInstance(); 
-        Connection conn = (Connection) DBConnector.conn;
-        String sql = "SELECT * FROM `sanpham`"; 
-        PreparedStatement pstmt = (PreparedStatement) conn.prepareStatement(sql); 
-        ResultSet rs = pstmt.executeQuery(sql);
-        SanPham sp = new SanPham(); 
+        SanPhamDAO sanphamDAO = new SanPhamDAO(); 
+        
         
         
     }
+    
+    
 }

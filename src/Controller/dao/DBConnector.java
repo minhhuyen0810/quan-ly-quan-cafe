@@ -13,10 +13,10 @@ import java.sql.DriverManager;
  * @author Windows 10
  */
 public class DBConnector {
-    String DB_URL; 
-    String Username;
-    String Password; 
-    public static Connection conn; 
+    private String DB_URL; 
+    private String Username;
+    private String Password; 
+    private Connection conn; 
     private static DBConnector instance = null; 
 
     private DBConnector() throws Exception{
@@ -32,5 +32,8 @@ public class DBConnector {
             instance = new DBConnector();
         }
         return instance;
+    }
+    public Connection getConnection(){
+        return  conn;
     }
 }
